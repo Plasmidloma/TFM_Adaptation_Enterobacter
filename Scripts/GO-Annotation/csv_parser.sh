@@ -6,7 +6,7 @@ import pandas as pd
 from Bio import SeqIO
 import requests
 
-#The REST-API and the function for searching the URL were defined. The inference data obtained before (RefSeq accession number) were noted
+#The REST-API and the function for searching the URL were defined. The inference data obtained  (RefSeq accession number) were noted
 
 url = "https://rest.uniprot.org"
 csv = "~/TFM/chromosome_analysis_cleaned.csv"
