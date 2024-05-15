@@ -62,8 +62,8 @@ The pangenome was generated as a common reference for each species, a consensus 
 https://github.com/Plasmidloma/TFM_Adaptation_Enterobacter/tree/main/Scripts/Anvi'o
 
 
-
-
+## Contact
+If you encounter any issues or have suggestions for improvements, please contact me: palomaroderafernandez@gmail.com
 
 
 
