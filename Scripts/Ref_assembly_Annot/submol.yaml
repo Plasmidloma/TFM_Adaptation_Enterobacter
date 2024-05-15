@@ -1,0 +1,30 @@
+topology: 'circular'
+organism:
+    genus_species: 'Escherichia coli'
+    strain: 'EC02'
+contact_info:
+    last_name: 'San Millan'
+    first_name: 'Alvaro'
+    email: 'alvsanmillan@gmail.com'
+    organization: 'Centro Nacional de Biotecnologia-CSIC'
+    department: 'Department of Microbial Biotechnology'
+    street: 'Darwin, 3'
+    city: 'Madrid'
+    postal_code: '28049'
+    country: 'Spain'
+authors:
+    - author:  
+        last_name: 'Rodera'    
+        first_name: 'Paloma'
+    - author:  
+        last_name: 'Sastre-Dominguez'    
+        first_name: 'Jorge'
+    - author:  
+        last_name: 'Toribio-Celestino'    
+        first_name: 'Laura'
+    - author:  
+        last_name: 'Santos-Lopez'    
+        first_name: 'Alfonso'
+    - author:  
+        last_name: 'San Millan'    
+        first_name: 'Alvaro'
