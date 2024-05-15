@@ -56,8 +56,10 @@ REST API from the UniprotKB database and represented on a high dimensional data 
 https://github.com/Plasmidloma/TFM_Adaptation_Enterobacter/tree/main/Scripts/GO-Annotation
 
 
-## Anvi'o
+## Pangenome creation and Anvi'o
+The pangenome was generated as a common reference for each species, a consensus sequence of all the strains. This was performed using Roary v.3.13.0, using the GFF3 files  produced by Prokka v.1.14.5. To simultaneously visualize all the mutational events obtained in the variant calling, the results were represented using the reference pangenome using Anvi’o v.8.1.0 as desccribed in `pangenome_anvio.sh`.
 
+https://github.com/Plasmidloma/TFM_Adaptation_Enterobacter/tree/main/Scripts/Anvi'o
 
 
 
