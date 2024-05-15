@@ -29,11 +29,12 @@ genome and a quality assess was performed. The assemblies obtained were annotate
 ## From raw reads to variant calling
 A quality control (QC) of the raw reads was performed using FastQC v.0.11.9 and the reports were unified using MultiQC v.1.21. Sequence trimming was performed using Trim Galore v.0.6.4. Parameters were adjusted to discard sequences shorter than 50 bp,
 trim low-quality ends and trim Nextera adapters and generate FastQC reports. A final compilation of the reports was performed to assess the quality of the trimming process. The final clean reads were used to perform the subsequent downstream analyses.
-To detect the genomic changes occurred during the conjugation or curing process, Variant Calling was performed and the assemblies were needed. The references were sequenced using both Illumina and Nanopore technology and closed by hybrid assembly. Hybrid assemblies require a combination of long and short reads and generate closed assemblies. The hybrid assembly was performed using Unicycler v.0.4.0. For those references and strains that could not be closed, SPAdes genome assembler v.3.15.4 was used. Parameters were adjusted to assemble high-coverage isolate samples and with an automatic coverage cutoff value (–isolate –cov-cutoff auto). The quality of all of the assemblies was checked using QUAST v.5.2.0 and were annotated using the NCBI Prokaryotic Genome Annotation Pipeline (PGAP, v.2023-10-03.build7061) and Prokka v.1.14.5.
+To detect the genomic changes occurred during the conjugation or curing process, Variant Calling was performed and the assemblies were needed (`trim_assembly_anot.sh`). 
+The references were sequenced using both Illumina and Nanopore technology and closed by hybrid assembly. Hybrid assemblies require a combination of long and short reads and generate closed assemblies. The hybrid assembly was performed using Unicycler v.0.4.0. For those references and strains that could not be closed, SPAdes genome assembler v.3.15.4 was used. Parameters were adjusted to assemble high-coverage isolate samples and with an automatic coverage cutoff value (–isolate –cov-cutoff auto). The quality of all of the assemblies was checked using QUAST v.5.2.0 and were annotated using the NCBI Prokaryotic Genome Annotation Pipeline (PGAP, v.2023-10-03.build7061) and Prokka v.1.14.5.
 
 https://github.com/Plasmidloma/TFM_Adaptation_Enterobacter/tree/main/Scripts/Ref_assembly_Annot
 
-For the strains which references were closed and for the variant calling against pOXA_48, Breseq v.0.38.1 was used using the default parameters. For the strains examined in Conjugation Subset 1.2, the -p flag was employed to detect low frequency mutations. For those strains which references had not been closed, the software used was Snippy v.4.6.0 with default parameters. At the end, all the results were filtered and merged, the result being a high dimensional data table.
+For the strains which references were closed and for the variant calling against pOXA_48, Breseq v.0.38.1 was used using the default parameters. For the strains examined in Conjugation Subset 1.2, the -p flag was employed to detect low frequency mutations. For those strains which references had not been closed, the software used was Snippy v.4.6.0 with default parameters. At the end, all the results were filtered and merged, the result being a high dimensional data table. All is collected in `VC.sh`.
 
 https://github.com/Plasmidloma/TFM_Adaptation_Enterobacter/tree/main/Scripts/VC-events
 
@@ -43,10 +44,33 @@ using the plasmidfinder and resfinder databases. The results obtained were summa
 
 https://github.com/Plasmidloma/TFM_Adaptation_Enterobacter/tree/main/Scripts/PlasmidomeResistome
 
-
-
 ## PCN 
 For extracting the PCN, the statistical analyses carried out  data  and representing the PCN of pOXA-48 contained in each transconjugant strain, the script `PCN.R` was developed.
 
 https://github.com/Plasmidloma/TFM_Adaptation_Enterobacter/tree/main/Scripts/PCN
+
+## GO Annotations
+A functional analysis was conducted to study parallel mutation events associated at biological process and functional level. A Shell script (`csv_parser.sh`) was developed to extracted all the information from the GO annotations using a
+REST API from the UniprotKB database and represented on a high dimensional data table. A heatmap showing the frequency of these events in each strain was represented using the R module ggplot2 3.5.0 (`heatmap.R` ).
+
+https://github.com/Plasmidloma/TFM_Adaptation_Enterobacter/tree/main/Scripts/GO-Annotation
+
+
+## Anvi'o
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
