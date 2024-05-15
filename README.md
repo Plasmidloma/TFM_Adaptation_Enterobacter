@@ -30,7 +30,23 @@ genome and a quality assess was performed. The assemblies obtained were annotate
 A quality control (QC) of the raw reads was performed using FastQC v.0.11.9 and the reports were unified using MultiQC v.1.21. Sequence trimming was performed using Trim Galore v.0.6.4 [43]. Parameters were adjusted to discard sequences shorter than 50 bp,
 trim low-quality ends and trim Nextera adapters and generate FastQC reports. A final compilation of the reports was performed to assess the quality of the trimming process. The final clean reads were used to perform the subsequent downstream analyses.
 To detect the genomic changes occurred during the conjugation or curing process, Variant Calling was performed and the assemblies were needed. The references were sequenced using both Illumina and Nanopore technology and closed by hybrid assembly. Hybrid assemblies require a combination of long and short reads and generate closed assemblies. The hybrid assembly was performed using Unicycler v.0.4.0. For those references and strains that could not be closed, SPAdes genome assembler v.3.15.4 was used. Parameters were adjusted to assemble high-coverage isolate samples and with an automatic coverage cutoff value (–isolate –cov-cutoff auto). The quality of all of the assemblies was checked using QUAST v.5.2.0 and were annotated using the NCBI Prokaryotic Genome Annotation Pipeline (PGAP, v.2023-10-03.build7061) and Prokka v.1.14.5.
+
 https://github.com/Plasmidloma/TFM_Adaptation_Enterobacter/tree/main/Scripts/Ref_assembly_Annot
 
 For the strains which references were closed and for the variant calling against pOXA_48, Breseq v.0.38.1 was used using the default parameters. For the strains examined in Conjugation Subset 1.2, the -p flag was employed to detect low frequency mutations. For those strains which references had not been closed, the software used was Snippy v.4.6.0 with default parameters. At the end, all the results were filtered and merged, the result being a high dimensional data table.
+
 https://github.com/Plasmidloma/TFM_Adaptation_Enterobacter/tree/main/Scripts/VC-events
+
+## Sample Characterization
+To characterize the rest of the plasmids and ARGs in the strains studied, Abricate v.1.0.0 was employed, obtaining information was retrieved on both the plasmids identified and the ARGs,
+using the plasmidfinder and resfinder databases. The results obtained were summarized in Results/SampleCharacterization and a heatmap was generated using an R script heatmap_plasmidome.R .
+
+https://github.com/Plasmidloma/TFM_Adaptation_Enterobacter/tree/main/Scripts/PlasmidomeResistome
+
+
+
+## PCN 
+For extracting the PCN, the statistical analyses carried out  data  and representing the PCN of pOXA-48 contained in each transconjugant strain, the script PCN.R was developed.
+
+https://github.com/Plasmidloma/TFM_Adaptation_Enterobacter/tree/main/Scripts/PCN
+
